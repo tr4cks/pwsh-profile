@@ -1,0 +1,61 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json
+version: 2
+final_space: true
+console_title_template: "{{if .Env.POSH_TERM_TITLE}}'{{.Env.POSH_TERM_TITLE}}' in {{end}}[{{.Folder}}]"
+
+palettes:
+  template : "{{ if eq .Env.TERM_DARK_MODE \"true\" }}dark{{ else }}light{{ end }}"
+  list:
+    light:
+      block_bg: "254"
+      block_fg: "236"
+      icon_bg: "252"
+      icon_fg: "236"
+      shell: "236"
+      status_bg: "254"
+      status_fg: "236"
+    dark:
+      block_bg: "222"
+      block_fg: "237"
+      icon_bg: "237"
+      icon_fg: "231"
+      shell: "222"
+      status_bg: "237"
+      status_fg: "222"
+
+blocks:
+  - type: prompt
+    alignment: right
+    segments:
+      - type: text
+        style: plain
+        foreground: "p:icon_fg"
+        background: "p:icon_bg"
+        template: "  " # \ue711
+      - type: path
+        style: plain
+        foreground: p:block_fg
+        background: p:block_bg
+        properties:
+          folder_icon: "  " # \uf115
+          style: agnoster_short
+          max_depth: 2
+      - type: python
+        style: plain
+        foreground: p:block_fg
+        background: p:block_bg
+        template: "<p:icon_fg,p:icon_bg>  </> {{ if .Error }}{{ .Error }}{{ else }}(venv) {{ .Full }}{{ end }} " # \ue73c
+
+  - type: prompt
+    newline: true
+    alignment: left
+    segments:
+      - type: status
+        foreground: "p:status_fg"
+        template: "<,p:status_bg> {{ .Code }} </> "
+        properties:
+          always_enabled: false
+      - type: text
+        style: plain
+        foreground: p:shell
+        template: "" # \ue285
