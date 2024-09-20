@@ -1,8 +1,10 @@
 # pwsh-profile
 
-For the moment, this configuration is only available on macOS.
+This PowerShell profile has been specifically designed to adapt syntax highlighting for both dark and light modes, ensuring optimal readability in either theme. It leverages ANSI 256 colors, providing a wide range of vibrant and subtle tones. As a result, the profile integrates seamlessly with macOS Terminal, taking full advantage of its color capabilities. For now, I encourage you to explore the profile to see the available commands and options tailored to enhance your terminal experience.
 
-First, you need to install PowerShell (version 7.2 or later), Oh-My-Posh, and a Nerd Font.
+> For the moment, this configuration is only available on macOS.
+
+First, you need to install [PowerShell](https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell?view=powershell-7.4) (version 7.2 or later), [Oh-My-Posh](https://ohmyposh.dev/), and a [Nerd Font](https://www.nerdfonts.com/).
 You will then need to set this font in each terminal where you want to use this configuration.
 
 And finally:
